@@ -1,0 +1,47 @@
+{
+    "name": "sandordeli/austria-recruitment",
+    "authors": [
+        {
+            "name": "Sandor Deli",
+            "email": "bgfkszmsdeli@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "wordpress/wordpress",
+                "type": "webroot",
+                "version": "4.5.1",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://wordpress.org/wordpress-4.5.1.zip"
+                },
+                "require": {
+                    "fancyguy/webroot-installer": "^1.0"
+                }
+            }
+        },
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "wordpress/wordpress": "4.5.*",
+        "wpackagist-plugin/wordpress-seo":">=7.0.2"
+    },
+    "extra": {
+        "webroot-dir": "wp",
+        "webroot-package": "wordpress/wordpress",
+        "installer-paths": {
+            "app/plugins/{$name}": ["type:wordpress-plugin"]
+        }
+    },
+    "scripts": {
+        "db": "composer db:kill && composer db:create",
+        "db:create": "export $(cat .env | xargs) && docker run --name wp-mysql -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_USER=sandor -e MYSQL_PASSWORD=bgfkszm  -e MYSQL_ROOT_PASSWORD=bgfkszm -e MYSQL_DATABASE=wp -d mysql:latest",
+        "db:kill": "docker ps | grep wp-mysql && docker rm --force wp-mysql || echo 'no wordpress database is running'",
+        "db:attach": "docker exec -it wp-mysql bash"
+    }
+}
