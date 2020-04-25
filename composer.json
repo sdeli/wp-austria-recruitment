@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "wpackagist-plugin/wordpress-seo":">=7.0.2"
+        "wpackagist-plugin/wordpress-seo":">=7.0.2",
+        "friendsofphp/php-cs-fixer": "^2.16"
     },
     "extra": {
         "installer-paths": {
@@ -22,8 +23,15 @@
     },
     "scripts": {
         "db": "composer db:kill && composer db:create",
-        "db:create": "export $(cat .env | xargs) && docker run --name wp-mysql -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -e MYSQL_USER=sandor -e MYSQL_PASSWORD=bgfkszm  -e MYSQL_ROOT_PASSWORD=bgfkszm -e MYSQL_DATABASE=wp -d mysql:latest",
-        "db:kill": "docker ps | grep wp-mysql && docker rm --force wp-mysql || echo 'no wordpress database is running'",
-        "db:attach": "docker exec -it wp-mysql bash"
+        "db:create": "docker exec wp-austria-recruitment_db_1 sh -c \"mysql -uexampleuser -pexamplepass -e 'create database exampledb;'\"",
+        "db:drop": "docker exec wp-austria-recruitment_db_1 sh -c \"mysql -uexampleuser -pexamplepass -e 'drop database exampledb;'\"",
+        "start": "docker-compose up --force-recreate -d",
+        "conf:get": "docker cp wp-austria-recruitment_wordpress_1:/var/www/html/wp-config.php ./wp-config.php",
+        "conf:update": "docker cp ./wp-config.php wp-austria-recruitment_wordpress_1:/var/www/html/wp-config.php",
+        "gulp": "npx gulp"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.12.19",
+        "squizlabs/php_codesniffer": "^3.5"
     }
 }

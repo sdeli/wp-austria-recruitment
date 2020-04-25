@@ -1,15 +1,7 @@
 /vendor/
+/node_modules/
 
 !app/
 app/*
 
-!app/wp-config.php
-
-!app/wp-content/
-app/wp-content/*
-
-!app/wp-content/themes/
-app/wp-content/themes/*
-
-!app/wp-content/themes/austria-recruitment/
-
+!app/austria-recruitment/
