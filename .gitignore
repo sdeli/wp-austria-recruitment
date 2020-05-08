@@ -1,7 +1,8 @@
-/vendor/
 /node_modules/
 
-!app/
-app/*
+/wp-content/vendor/
 
-!app/austria-recruitment/
+/wp-content/plugins/*
+!/wp-content/plugins/.gitkeep
+
+/wp-content/vendor/

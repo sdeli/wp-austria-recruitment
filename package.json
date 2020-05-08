@@ -4,12 +4,18 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "npx gulp"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "blog-navbar": "file:./wp-content/themes/austria-recruitment/assets/js/libs/blog-navbar",
+    "front-end-config": "file:./wp-content/themes/austria-recruitment/assets/js/libs/front-end-config",
+    "nav-drop-down": "file:./wp-content/themes/austria-recruitment/assets/js/libs/nav-drop-down",
     "autoprefixer": "^9.7.6",
+    "browserify": "^16.5.1",
+    "envify": "^4.1.0",
     "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
@@ -19,6 +25,7 @@
     "postcss-mixins": "^6.2.3",
     "postcss-nested": "^4.2.1",
     "postcss-simple-vars": "^5.0.2",
+    "source": "0.0.3",
     "vinyl-source-stream": "^2.0.0"
   },
   "browserslist": {

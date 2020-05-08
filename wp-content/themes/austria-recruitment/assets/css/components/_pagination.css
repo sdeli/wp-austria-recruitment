@@ -1,0 +1,46 @@
+.pagination {
+    
+    &__left {
+        float: left;
+        width: 40%;
+        font-family: 'Poppins', sans-serif;
+        > a {
+            margin: 0 auto;
+            @mixin orangeGradientBackColor;
+            text-decoration: none;
+        }
+    }
+    
+    &__right {
+        font-family: 'Poppins', sans-serif;
+        float: right;
+        width: 40%;
+
+        > a {
+            margin: 0 auto;
+            @mixin orangeGradientBackColorReverse;
+            text-decoration: none;
+        }
+    }
+
+    &__btn {
+        width: 70%;
+        font-size: 1.2rem;
+        color: white;
+        font-weight: bold;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.33);
+    }
+
+    &__text {
+        top: -1px;
+        position: relative;
+    }
+}
+
+@media (min-width: 419px) {
+    .pagination {
+        &__btn {
+            width: 90%;
+        }
+    }
+}

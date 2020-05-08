@@ -14,11 +14,12 @@
     ],
     "require": {
         "wpackagist-plugin/wordpress-seo":">=7.0.2",
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "monolog/monolog": "^2.0"
     },
     "extra": {
         "installer-paths": {
-            "app/wp-content/plugins/{$name}": ["type:wordpress-plugin"]
+            "app/plugins/{$name}": ["type:wordpress-plugin"]
         }
     },
     "scripts": {
@@ -28,10 +29,16 @@
         "start": "docker-compose up --force-recreate -d",
         "conf:get": "docker cp wp-austria-recruitment_wordpress_1:/var/www/html/wp-config.php ./wp-config.php",
         "conf:update": "docker cp ./wp-config.php wp-austria-recruitment_wordpress_1:/var/www/html/wp-config.php",
-        "gulp": "npx gulp"
+        "gulp": "./node_modules/gulp/bin/gulp.js"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12.19",
         "squizlabs/php_codesniffer": "^3.5"
+    },
+    "config": { 
+        "vendor-dir": "wp-content/vendor" 
+    },
+    "autoload": {
+        "psr-4": {"Libs\\": "wp-content/Libs"}
     }
 }
