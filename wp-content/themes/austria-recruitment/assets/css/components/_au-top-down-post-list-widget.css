@@ -1,0 +1,56 @@
+.au-top-down-post-list-widget:before,
+.au-top-down-post-list-widget:after {
+    content: "";
+    display: table;
+} 
+
+.au-top-down-post-list-widget:after {
+    clear: both;
+} 
+
+.au-top-down-post-list-widget:after {
+    zoom: 1;
+} 
+
+.au-top-down-post-list-widget {
+    &__header {
+        font-size: 1.2rem;
+        margin-bottom: 0.6375rem;
+        @mixin headingText;
+    }
+
+    &__post {
+        text-decoration: none;
+        margin-bottom: 0.6375rem;
+        
+        img {
+            display: inline-block;
+            width: 50%;
+            border-radius: $borderRadious;;
+            box-shadow: $boxShadowLight;
+        }
+        
+        &__info {
+            display: inline-block;
+            width: 46%;
+            vertical-align: top;
+            margin-left: 2%;
+
+            h4 {
+                text-decoration: none;
+                font-size: 1.1rem;
+                margin: 0;
+                @mixin headingText;
+            }
+
+            p {
+                margin-block-end: 0;
+                margin-block-start: 0;
+            }
+        }
+    }
+
+    &__post:last-child {
+        margin-bottom: 0;
+    }
+}

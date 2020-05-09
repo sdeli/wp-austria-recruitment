@@ -4,5 +4,6 @@
 
 /wp-content/plugins/*
 !/wp-content/plugins/.gitkeep
+/wp-content/uploads
 
 /wp-content/vendor/

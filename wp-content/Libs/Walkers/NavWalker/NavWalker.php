@@ -1,8 +1,6 @@
 <?php
 namespace Libs\Walkers\NavWalker;
 
-// namespace Libs\Utils;
-
 use Walker_Nav_Menu;
 
 class NavWalker extends Walker_Nav_Menu

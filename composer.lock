@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60ac827d2481a82eb82c5b003c06042a",
+    "content-hash": "004cd5bafe47d541c39261f1d8efd7ad",
     "packages": [
         {
             "name": "composer/installers",
@@ -1759,6 +1759,42 @@
             "time": "2020-03-27T16:56:45+00:00"
         },
         {
+            "name": "wpackagist-plugin/widget-css-classes",
+            "version": "1.5.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/widget-css-classes/",
+                "reference": "tags/1.5.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/widget-css-classes.1.5.4.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/widget-css-classes/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-popular-posts",
+            "version": "5.1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordpress-popular-posts/",
+                "reference": "tags/5.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-popular-posts.5.1.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-popular-posts/"
+        },
+        {
             "name": "wpackagist-plugin/wordpress-seo",
             "version": "14.0.4",
             "source": {
@@ -1780,16 +1816,16 @@
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.19",
+            "version": "0.12.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "054f6d76b12ba9a6c13a5a8d5fcdf51219615f4d"
+                "reference": "71e529efced79e055fa8318b692e7f7d03ea4e75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/054f6d76b12ba9a6c13a5a8d5fcdf51219615f4d",
-                "reference": "054f6d76b12ba9a6c13a5a8d5fcdf51219615f4d",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/71e529efced79e055fa8318b692e7f7d03ea4e75",
+                "reference": "71e529efced79e055fa8318b692e7f7d03ea4e75",
                 "shasum": ""
             },
             "require": {
@@ -1832,7 +1868,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-04-19T20:35:10+00:00"
+            "time": "2020-05-05T12:55:44+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

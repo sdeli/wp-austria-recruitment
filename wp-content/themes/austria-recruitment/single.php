@@ -6,27 +6,29 @@
 
 <section class="container main-info-area">
     <div class="row">
-        <div class="info-feed col-btm-12 col-gutter-z-btm-both col-gutter-n-sm-both col-md-8">
-            <?php if (have_posts()) { ?>
-            <?php
-                while (have_posts()) {
-                    the_post();
-                    $utils = new Libs\Utils\Utils();
-                    global $post;
-                    $author_ID = $post->post_author;
-                    $author_URL = get_author_posts_url($author_ID);
 
-                    $prevPost = get_adjacent_post();
-                    $isPrevPost = boolval($prevPost);
-                    if ($isPrevPost) {
-                        $prev_post_link_url = "/?p=".$prevPost->ID;
-                    }
-                    
-                    $nextPost = get_adjacent_post(false, '', false);
-                    $isNextPost = boolval($nextPost);
-                    if ($isNextPost) {
-                        $next_post_link_url = "/?p=".$nextPost->ID;
-                    } ?>
+        <div class="info-feed col-btm-12 col-gutter-z-btm-both col-gutter-n-sm-both col-md-8">
+            <?php
+                if (have_posts()) :
+                    while (have_posts()) :
+                        the_post();
+                        $utils = new Libs\Utils\Utils();
+                        global $post;
+                        $author_ID = $post->post_author;
+                        $author_URL = get_author_posts_url($author_ID);
+
+                        $prevPost = get_adjacent_post();
+                        $isPrevPost = boolval($prevPost);
+                        if ($isPrevPost) {
+                            $prev_post_link_url = "/?p=".$prevPost->ID;
+                        }
+                        
+                        $nextPost = get_adjacent_post(false, '', false);
+                        $isNextPost = boolval($nextPost);
+                        if ($isNextPost) {
+                            $next_post_link_url = "/?p=".$nextPost->ID;
+                        }
+            ?>
 
             <div id="post-id" class="article fr-view">
                 <?php $utils->echoAuStyledCategoryLinks(); ?>
@@ -45,10 +47,6 @@
                 </div>
             </div> <!-- article end -->
 
-        </div> <!-- info-feed end -->
-
-        <div
-            class="info-feed col-btm-12 col-gutter-z-btm-both col-gutter-n-sm-both col-md-6 col-md-offset-1 col-gutter-z-md-left">
             <?php if (isset($prev_post_link_url)) { ?>
             <div class="pagination__left">
                 <a href="<?= $prev_post_link_url ?>"
@@ -68,16 +66,14 @@
                 </a>
             </div>
             <?php } ?>
+
+
+            <?php endwhile;
+            endif; ?>
         </div> <!-- info-feed end -->
 
-        <?php
-                } ?>
-        <?php } ?>
-
-        <!-- <aside
-            class="widgets col-btm-12 col-gutter-z-btm-both col-gutter-n-sm-both col-md-4 col-gutter-n-md-right col-gutter-z-md-left">
-        </aside> -->
-
+        <?php get_sidebar(); ?>
+        <?php get_sidebar(); ?>
     </div> <!-- row -->
 </section> <!-- main-info-area end -->
 

@@ -7,9 +7,11 @@ require_once $composerAutoLoadPath;
 
 include(get_theme_file_path('/includes/front/enqueue.php'));
 include(get_theme_file_path('/includes/register-menus.php'));
+include(get_theme_file_path('/includes/register-widgets.php'));
 
 add_action('wp_enqueue_scripts', 'au_enqueue');
 add_action('init', 'au_register_menus');
+add_action('widgets_init', 'au_widgets');
 
 add_theme_support('post-thumbnails');
 add_theme_support('title-tag');

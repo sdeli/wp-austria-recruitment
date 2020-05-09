@@ -14,12 +14,14 @@
     ],
     "require": {
         "wpackagist-plugin/wordpress-seo":">=7.0.2",
+        "wpackagist-plugin/widget-css-classes":">=1.5.4",
+        "wpackagist-plugin/wordpress-popular-posts":">=5.1.0",
         "friendsofphp/php-cs-fixer": "^2.16",
         "monolog/monolog": "^2.0"
     },
     "extra": {
         "installer-paths": {
-            "app/plugins/{$name}": ["type:wordpress-plugin"]
+            "wp-content/plugins/{$name}": ["type:wordpress-plugin"]
         }
     },
     "scripts": {

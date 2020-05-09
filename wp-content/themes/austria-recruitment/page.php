@@ -7,14 +7,14 @@
 <section class="container main-info-area">
     <div class="row">
         <div class="info-feed col-btm-12 col-gutter-z-btm-both col-gutter-n-sm-both col-md-8">
-            <?php if (have_posts()) { ?>
-            <?php
-                while (have_posts()) {
-                    the_post();
-                    $utils = new Libs\Utils\Utils();
-                    global $post;
-                    $author_ID = $post->post_author;
-                    $author_URL = get_author_posts_url($author_ID); ?>
+            <?php if (have_posts()):
+                    while (have_posts()):
+                        
+                        the_post();
+                        $utils = new Libs\Utils\Utils();
+                        global $post;
+                        $author_ID = $post->post_author;
+                        $author_URL = get_author_posts_url($author_ID); ?>
 
             <div id="post-id" class="article fr-view">
                 <?php $utils->echoAuStyledCategoryLinks(); ?>
@@ -35,13 +35,10 @@
 
         </div> <!-- info-feed end -->
 
-        <?php
-                } ?>
-        <?php } ?>
+        <?php endwhile;
+            endif; ?>
 
-        <!-- <aside
-            class="widgets col-btm-12 col-gutter-z-btm-both col-gutter-n-sm-both col-md-4 col-gutter-n-md-right col-gutter-z-md-left">
-        </aside> -->
+        <?php get_sidebar(); ?>
 
     </div> <!-- row -->
 </section> <!-- main-info-area end -->

@@ -5,7 +5,6 @@
 ?>
 <section class="container main-info-area">
     <div class="row">
-
         <section class="container main-info-area">
             <div class="row">
                 <div
@@ -22,19 +21,10 @@
                 ?>
                 </div>
 
-                <aside
-                    class="widgets col-btm-12 col-gutter-s-btm-both col-gutter-n-sm-both col-md-4 col-gutter-n-md-right col-gutter-z-md-left">
-                </aside>
+                <?php get_sidebar(); ?>
+
             </div>
         </section>
-
-        <div class="info-feed col-btm-12 col-gutter-z-btm-both col-gutter-n-sm-both col-md-8">
-        </div> <!-- info-feed end -->
-
-        <aside
-            class="widgets col-btm-12 col-gutter-s-btm-both col-gutter-n-sm-both col-md-4 col-gutter-n-md-right col-gutter-z-md-left">
-            widget
-        </aside>
 
     </div> <!-- row -->
 </section> <!-- main-info-area end -->
