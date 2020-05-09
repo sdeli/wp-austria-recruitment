@@ -18,11 +18,13 @@
                 'thumbnail_height' => 100,
                 'post_html' => '
                     <div class="au-top-down-post-list-widget__post">
-                        <img alt="{text_title}" src="{thumb_url}">
-
-                        <div class="au-top-down-post-list-widget__post__info">
-                            <h4>{text_title}</h4>
-                        </div>
+                        <a href="{url}">
+                            <img alt="{text_title}" src="{thumb_url}">
+                                
+                            <div class="au-top-down-post-list-widget__post__info">
+                                <h4>{text_title}</h4>
+                            </div>
+                        </a>
                     </div>
                     '
             );

@@ -34,38 +34,42 @@ function makeCurrNavLiActive() {
 };
 
 },{"./modules/drop-down-nav-on-mobile/drop-down-nav-on-mobile.js":2,"./modules/resize-navbar/resize-navbar.js":7,"nav-drop-down":11}],2:[function(require,module,exports){
-const toggleOnLeftInOutCloseBtn = require('./moduls/toggle-on-left-in-out-close-btn/toggle-on-left-in-out-close-btn.js');
-const addEventListenerFn = require('./moduls/add-event-listener/add-event-listener.js');
+const toggleOnLeftInOutCloseBtn = require('./modules/toggle-on-left-in-out-close-btn/toggle-on-left-in-out-close-btn.js');
+const addEventListenerFn = require('./modules/add-event-listener/add-event-listener.js');
 const {checkIfSceenIsOnMobileView, cssAnimationClasses} = require('../utils/utils.js');
 
 module.exports = () => {
-	const navbar = $('.blog-navbar');
 	const navbarMenu = $('.blog-navbar__position');
-	const dropDownBtn = $('.blog-navbar__hamburger__relative-cont');
+	const dropDownOpenBtn = $('.blog-navbar__hamburger');
+	const dropDownOpenBtnHorizontalPositonElem = $('.blog-navbar__hamburger__relative-cont');
 	const dropDownCloseBtn = $('.blog-navbar__position__menu__close-btn');
-
-	const eventsArr = ['ontouchstart', 'click'];
+	
+	const DROPDOWN_OPEN_BTN_DEFAULT_POSITION = 16;
+	const GUTTER_FROM_WINDOW_TOP = 6;
+	const userInteractionEventsArr = ['ontouchstart', 'click'];
 	
 	const {smoothSlideDown, smoothSlideUp} = cssAnimationClasses;
 
 	dropDownNavOnMobile();
+	dropdownOpenBtnFollowOnScroll();
+	// dropdownFollowOnScroll();
 
 	function dropDownNavOnMobile() {
-		addEventListenerFn(eventsArr, dropDownBtn, function() {
+		addEventListenerFn(userInteractionEventsArr, dropDownOpenBtnHorizontalPositonElem, function() {
 			let isScreenOnMobileView = checkIfSceenIsOnMobileView();
 
 			if (isScreenOnMobileView) {
 				slideDownNav();
-				toggleOnLeftInOutCloseBtn(dropDownBtn);;
+				toggleOnLeftInOutCloseBtn(dropDownOpenBtnHorizontalPositonElem);;
 			}
 		});
 
-		addEventListenerFn(eventsArr, dropDownCloseBtn, function() {
+		addEventListenerFn(userInteractionEventsArr, dropDownCloseBtn, function() {
 			let isScreenOnMobileView = checkIfSceenIsOnMobileView();
 
 			if (isScreenOnMobileView) {
 				slideUpNav();
-				toggleOnLeftInOutCloseBtn(dropDownBtn);;
+				toggleOnLeftInOutCloseBtn(dropDownOpenBtnHorizontalPositonElem);;
 			}
 		});
 	}
@@ -85,8 +89,37 @@ module.exports = () => {
 		navbarMenu.removeClass(smoothSlideDown)	
 		navbarMenu.addClass(smoothSlideUp)	
 	}
+
+	function dropdownOpenBtnFollowOnScroll() {
+		dropdownOpenBtnFollowScroll();
+		let windowPrevPosition = 0;
+
+		$(window).scroll(() => {
+			dropdownOpenBtnFollowScroll(windowPrevPosition);
+			windowPrevPosition = window.pageYOffset;
+		});
+	}
+	
+	function dropdownOpenBtnFollowScroll(windowPrevPosition) {
+		const windowsCurrentPosition = window.pageYOffset;
+
+		const isWindowUnderOpenBtnOriginalPosition = windowsCurrentPosition > DROPDOWN_OPEN_BTN_DEFAULT_POSITION;
+		const isScreenOnMobileView = checkIfSceenIsOnMobileView();
+		if (isScreenOnMobileView && isWindowUnderOpenBtnOriginalPosition) {
+			console.log(`${window.pageYOffset + GUTTER_FROM_WINDOW_TOP}px`);
+			return dropDownOpenBtn.css({ "top": `${window.pageYOffset + GUTTER_FROM_WINDOW_TOP}px` });
+		}
+
+		const wasWindowUnderOpenBtnOriginalPosition = windowPrevPosition > DROPDOWN_OPEN_BTN_DEFAULT_POSITION;
+		const isWindowNowAtTheTop = windowsCurrentPosition <= DROPDOWN_OPEN_BTN_DEFAULT_POSITION;
+		const isWindowGoneBackToTop = isWindowNowAtTheTop && wasWindowUnderOpenBtnOriginalPosition;
+		if (isScreenOnMobileView && isWindowGoneBackToTop) {
+			return dropDownOpenBtn.css({ "top": `${DROPDOWN_OPEN_BTN_DEFAULT_POSITION}px` });
+
+		}
+	}
 }
-},{"../utils/utils.js":8,"./moduls/add-event-listener/add-event-listener.js":3,"./moduls/toggle-on-left-in-out-close-btn/toggle-on-left-in-out-close-btn.js":4}],3:[function(require,module,exports){
+},{"../utils/utils.js":8,"./modules/add-event-listener/add-event-listener.js":3,"./modules/toggle-on-left-in-out-close-btn/toggle-on-left-in-out-close-btn.js":4}],3:[function(require,module,exports){
 function addEventListenerFn(eventsArr, listenerElem, callBack) {
 	isCallbackArrayOfMultiCallbacks = Array.isArray(callBack);
 
@@ -263,8 +296,8 @@ module.exports = (navbarsPositioningDiv, IsScreenOnMobileView) => {
 	from function: showAndHideNav, adjustNavIfScreenGoneToMobileView, adjustNavIfScreenGoneToDesktopView
 */
 
-const adjustNavIfScreenGoneToMobileView = require('./moduls/adjust-nav-if-screen-gone-to-mobile-view/adjust-nav-if-screen-gone-to-mobile-view.js');
-const adjustNavIfScreenGoneTodesktopView = require('./moduls/adjust-nav-if-screen-gone-to-desktop-view/adjust-nav-if-screen-gone-to-desktop-view.js');
+const adjustNavIfScreenGoneToMobileView = require('./modules/adjust-nav-if-screen-gone-to-mobile-view/adjust-nav-if-screen-gone-to-mobile-view.js');
+const adjustNavIfScreenGoneTodesktopView = require('./modules/adjust-nav-if-screen-gone-to-desktop-view/adjust-nav-if-screen-gone-to-desktop-view.js');
 
 const {cssAnimationClasses, checkIfSceenIsOnMobileView} = require('../utils/utils.js');
 
@@ -306,7 +339,7 @@ module.exports = () => {
 		}
 	}
 }
-},{"../utils/utils.js":8,"./moduls/adjust-nav-if-screen-gone-to-desktop-view/adjust-nav-if-screen-gone-to-desktop-view.js":5,"./moduls/adjust-nav-if-screen-gone-to-mobile-view/adjust-nav-if-screen-gone-to-mobile-view.js":6}],8:[function(require,module,exports){
+},{"../utils/utils.js":8,"./modules/adjust-nav-if-screen-gone-to-desktop-view/adjust-nav-if-screen-gone-to-desktop-view.js":5,"./modules/adjust-nav-if-screen-gone-to-mobile-view/adjust-nav-if-screen-gone-to-mobile-view.js":6}],8:[function(require,module,exports){
 function checkIfSceenIsOnMobileView() {
 	let windowInnerWidth = window.innerWidth;
 	

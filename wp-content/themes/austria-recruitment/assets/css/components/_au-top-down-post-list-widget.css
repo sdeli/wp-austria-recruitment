@@ -1,13 +1,17 @@
+.au-top-down-post-list-widget__post:before,
+.au-top-down-post-list-widget__post:after,
 .au-top-down-post-list-widget:before,
 .au-top-down-post-list-widget:after {
     content: "";
     display: table;
 } 
 
+.au-top-down-post-list-widget__post:after,
 .au-top-down-post-list-widget:after {
     clear: both;
 } 
 
+.au-top-down-post-list-widget__post:after,
 .au-top-down-post-list-widget:after {
     zoom: 1;
 } 
@@ -15,23 +19,26 @@
 .au-top-down-post-list-widget {
     &__header {
         font-size: 1.2rem;
-        margin-bottom: 0.6375rem;
+        margin-bottom: 0.9375rem;
+        margin-block-start: 0;
         @mixin headingText;
     }
 
     &__post {
         text-decoration: none;
-        margin-bottom: 0.6375rem;
+        margin-bottom: 0.9375rem;
+        position: relative;
         
-        img {
-            display: inline-block;
+            
+        & img {
+            float: left;
             width: 50%;
-            border-radius: $borderRadious;;
-            box-shadow: $boxShadowLight;
+            border-radius: $borderRadious;
+            box-shadow: $boxShadow;
         }
         
         &__info {
-            display: inline-block;
+            float: right;
             width: 46%;
             vertical-align: top;
             margin-left: 2%;

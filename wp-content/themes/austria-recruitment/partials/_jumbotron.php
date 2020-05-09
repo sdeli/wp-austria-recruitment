@@ -11,9 +11,13 @@
 
     <div class="brand">
         <div class="brand__logo">
-            <div class="brand__logo__background"></div>
-            <img class="brand__logo__png" src="https://ockantbu.sirv.com/WP_127.0.0.1%3A8080/logo-200.png"
-                alt="ausztriai-allas-logo">
+            <a href="/">
+                <div class="brand__logo__background"></div>
+            </a>
+            <a href="/">
+                <img class="brand__logo__png" src="https://ockantbu.sirv.com/WP_127.0.0.1%3A8080/logo-200.png"
+                    alt="ausztriai-allas-logo">
+            </a>
         </div>
 
         <div class="brand__slogen">

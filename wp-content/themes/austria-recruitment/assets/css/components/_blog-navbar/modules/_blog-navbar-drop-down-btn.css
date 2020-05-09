@@ -4,6 +4,7 @@
 	top: 4.5rem;
 	left: 0;
 	z-index: 5;
+	transition: top 0.1s ease-in-out;
 
 	&__relative-cont {
 		position: relative;
@@ -24,6 +25,16 @@
 			opacity: 0.8;
 			z-index: 1;
 			border-radius: 0 15px 15px 0;
+		}
+
+		&__search-icon {
+			position: absolute;
+			left: 0.7rem;
+			top: 0.25rem;
+			font-size: 1.3rem;
+			color: $textOrange;
+			z-index: 1;
+			opacity: 0.8;
 		}
 
 		&__icon {
@@ -88,7 +99,7 @@
 @media(min-width: 419px) {
 	.blog-navbar {
 		&__hamburger {
-			top: 5.5rem;
+			top: 1rem;
 		}
 	}
 }

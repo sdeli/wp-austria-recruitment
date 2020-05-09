@@ -2,6 +2,7 @@
     <div class="blog-navbar__hamburger">
         <div class="blog-navbar__hamburger__relative-cont">
             <div class="blog-navbar__hamburger__relative-cont__background"></div>
+            <i class="blog-navbar__hamburger__relative-cont__search-icon fas fa-search"></i>
             <div class="blog-navbar__hamburger__relative-cont__icon">
                 <div class="blog-navbar__hamburger__relative-cont__icon__bar-middle"></div>
             </div>
@@ -16,6 +17,7 @@
             </div>
             <ul data-nav-li-conatiner>
                 <?php
+                    get_search_form();
                     if (has_nav_menu('nav-menu')) {
                         $navWalker = new Libs\Walkers\NavWalker\NavWalker();
 

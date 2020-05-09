@@ -66,6 +66,10 @@
             background: $mainWhite;
         }
 
+        &__input--no-margin-bottom {
+            margin-bottom: 0 !important;
+        }
+
         &__input--inline {
             display: inline-block;
         }
@@ -90,7 +94,7 @@
             font-size: 1.05rem;
             box-shadow: $boxShadow;
             border-radius: 6px;
-            padding: 7px;
+            padding: 6px;
         }
     }
 }
