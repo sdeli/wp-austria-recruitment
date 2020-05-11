@@ -17,17 +17,18 @@
             </div>
             <ul data-nav-li-conatiner>
                 <?php
-                    get_search_form();
-                    if (has_nav_menu('nav-menu')) {
-                        $navWalker = new Libs\Walkers\NavWalker\NavWalker();
+                        get_template_part('partials/_mobile-searchform');
+                        
+                        if (has_nav_menu('nav-menu')) {
+                            $navWalker = new Libs\Walkers\NavWalker\NavWalker();
 
-                        wp_nav_menu([
+                            wp_nav_menu([
                             'items_wrap' => '%3$s',
                             'theme_location' =>  'nav-menu',
                             'container' =>  false,
                             'walker' => $navWalker
                         ]);
-                    }
+                        }
                 ?>
                 <li data-nav-li class="blog-navbar__position__menu__item-separator"></li>
 

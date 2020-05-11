@@ -1,14 +1,14 @@
 <?php $unique_id = esc_attr(uniqid('search-form-')); ?>
 
-<div class="communication"
+<div class="communication visible-just-on-mobile-view"
     action="<?php echo esc_url(home_url('/')); ?>">
-    <h3 class="communication__header-light">
+    <h3 class="visible-just-on-desktop-view communication__header-light">
         <?php _e('Keress Az Oldalon', 'au'); ?>
     </h3>
 
     <form method="get"
         action="<?php echo esc_url(home_url('/')); ?>"
-        class="communication__form">
+        class="padding-top-md-0 communication__form">
 
         <input class="
             communication__form__input--no-margin-bottom

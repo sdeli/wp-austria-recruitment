@@ -3,6 +3,10 @@ body {
     position: relative;
 }
 
+.margin-bottom-thin {
+    margin-bottom: 0.635rem !important;
+}
+
 @media(min-width: 576px) {
     .visible-just-on-mobile-view {
         display: none;

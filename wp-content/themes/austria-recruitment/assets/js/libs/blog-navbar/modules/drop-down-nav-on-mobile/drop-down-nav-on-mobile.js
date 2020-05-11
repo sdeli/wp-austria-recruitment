@@ -70,7 +70,6 @@ module.exports = () => {
 		const isWindowUnderOpenBtnOriginalPosition = windowsCurrentPosition > DROPDOWN_OPEN_BTN_DEFAULT_POSITION;
 		const isScreenOnMobileView = checkIfSceenIsOnMobileView();
 		if (isScreenOnMobileView && isWindowUnderOpenBtnOriginalPosition) {
-			console.log(`${window.pageYOffset + GUTTER_FROM_WINDOW_TOP}px`);
 			return dropDownOpenBtn.css({ "top": `${window.pageYOffset + GUTTER_FROM_WINDOW_TOP}px` });
 		}
 
