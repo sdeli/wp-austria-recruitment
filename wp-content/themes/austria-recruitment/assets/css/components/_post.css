@@ -199,10 +199,6 @@
 
             &__body {
                 padding: 0.3125rem 0.625rem 0.625rem;
-
-                &__img {
-                    margin-top: 0.4rem;
-                }
             }
 
             &__body--gutter-top {
@@ -257,6 +253,10 @@
                 margin-bottom: 0;
             }
         }
+
+        &__teaser--full-width {
+            width: 100%;
+        }
     }
 }
 
@@ -268,6 +268,10 @@
         
         &__teaser {
             width: 65%;
+        }
+
+        &__teaser--full-width {
+            width: 100%;
         }
     }
 }

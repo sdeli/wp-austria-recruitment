@@ -8,7 +8,7 @@
         if (function_exists('wpp_get_mostpopular')) {
             $args = array(
                 'limit' => 5,
-                'header' => 'Népszerű Cikkek',
+                'header' => 'Népszerű cikkek',
                 'header_start' => '<h3 class="au-top-down-post-list-widget__header">',
                 'header_end' => '</h3>',
                 'wpp_start' => '<div class="au-top-down-post-list-widget">',

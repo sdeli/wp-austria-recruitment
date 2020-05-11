@@ -3,7 +3,7 @@
 <div class="communication visible-just-on-mobile-view"
     action="<?php echo esc_url(home_url('/')); ?>">
     <h3 class="visible-just-on-desktop-view communication__header-light">
-        <?php _e('Keress Az Oldalon', 'au'); ?>
+        <?php _e('Keress az oldalon', 'au'); ?>
     </h3>
 
     <form method="get"

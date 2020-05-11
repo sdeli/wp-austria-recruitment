@@ -3,7 +3,7 @@
 <div class="communication"
     action="<?php echo esc_url(home_url('/')); ?>">
     <h3 class="communication__header-light">
-        <?php _e('Keress Az Oldalon', 'au'); ?>
+        <?php _e('Keress az oldalon', 'au'); ?>
     </h3>
 
     <form method="get"

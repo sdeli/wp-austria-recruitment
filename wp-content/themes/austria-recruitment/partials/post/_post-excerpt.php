@@ -16,27 +16,33 @@
         </div>
 
         <div class="post__container__body">
+            <?php
+                $hasThumbnail = has_post_thumbnail();
+                if ($hasThumbnail) {
+                    ?>
             <a class="clearfix" href="" target="_blank">
-                <?php if (has_post_thumbnail()) { ?>
                 <div class="post__container__body__img">
                     <a href="<?php the_permalink(); ?>"
                         target="_blank">
                         <?php
                             the_post_thumbnail('full', [
                                 'class' => 'image_fade'
-                            ]);
-                        ?>
+                            ]); ?>
                 </div>
             </a>
-            <?php } ?>
+            <?php
+                } ?>
 
-
+            <?php if ($hasThumbnail) : ?>
             <div class="fr-view post__container__body__teaser">
-                <?php echo get_the_excerpt().'...<br>'; ?>
-                <a href="<?php the_permalink(); ?>"
-                    class="post__read-more">olvass tovább...</a>
-            </div>
-            </a>
-        </div> <!-- post__container__body clearfix -->
-    </div> <!-- post__container -->
-</div> <!-- post -->
+                <?php else : ?>
+                <div class="fr-view post__container__body__teaser post__container__body__teaser--full-width">
+                    <?php endif; ?>
+                    <?php echo get_the_excerpt().'...<br>'; ?>
+                    <a href="<?php the_permalink(); ?>"
+                        class="post__read-more">olvass tovább...</a>
+                </div>
+                </a>
+            </div> <!-- post__container__body clearfix -->
+        </div> <!-- post__container -->
+    </div> <!-- post -->
