@@ -1,6 +1,7 @@
 .info-feed {
+    margin-top: 0.6375rem;
     margin-bottom: 0.6375rem;
-    
+
     > div {
         margin-bottom: 0.6375rem;
     }
@@ -8,10 +9,6 @@
     > div:last-child {
         margin-bottom: 0; 
     }
-}
-
-.info-feed:first-child {
-    margin-top: 0.6375rem;
 }
 
 @media (min-width: 768px) {

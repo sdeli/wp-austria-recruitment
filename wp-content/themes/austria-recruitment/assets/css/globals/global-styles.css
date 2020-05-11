@@ -7,10 +7,8 @@ body {
     margin-bottom: 0.635rem !important;
 }
 
-@media(min-width: 576px) {
-    .visible-just-on-mobile-view {
-        display: none;
-    }
+.margin-left-s {
+    margin-left: 0.6rem;
 }
 
 @media(max-width: 576px) {
@@ -21,5 +19,10 @@ body {
     .padding-top-md-0 {
         padding-top: 0 !important;
     }
+}
 
+@media(min-width: 576px) {
+    .visible-just-on-mobile-view {
+        display: none;
+    }
 }
