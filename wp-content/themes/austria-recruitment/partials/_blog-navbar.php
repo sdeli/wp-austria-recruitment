@@ -23,11 +23,11 @@
                             $navWalker = new Libs\Walkers\NavWalker\NavWalker();
 
                             wp_nav_menu([
-                            'items_wrap' => '%3$s',
-                            'theme_location' =>  'nav-menu',
-                            'container' =>  false,
-                            'walker' => $navWalker
-                        ]);
+                                'items_wrap' => '%3$s',
+                                'theme_location' =>  'nav-menu',
+                                'container' =>  false,
+                                'walker' => $navWalker
+                            ]);
                         }
                 ?>
                 <li data-nav-li class="blog-navbar__position__menu__item-separator"></li>

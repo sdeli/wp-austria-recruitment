@@ -17,7 +17,6 @@
                         $author_URL = get_author_posts_url($author_ID); ?>
 
             <div id="post-id" class="article fr-view">
-                <?php $utils->echoAuStyledCategoryLinks(); ?>
                 <div class="article__content">
                     <div class="article__content__header">
                         <h1 class="article__content__header__h3 article__content__header__h3--centered">
