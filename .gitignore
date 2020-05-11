@@ -4,9 +4,10 @@
 
 /wp-content/plugins/*
 !/wp-content/plugins/.gitkeep
-/wp-content/uploads
 
-/wp-content/vendor/
+!/wp-content/uploads/word
+wp-content/uploads/2020
+wp-content/uploads/wordpress-popular-posts
 
 wp-content/themes/austria-recruitment/assets/css/main-bundled.css
 wp-content/themes/austria-recruitment/assets/js/main-bundled.js
