@@ -164,6 +164,20 @@
             padding-top: 0.6375rem;
         }
     }
+
+    &__read-more {
+        text-decoration: none;
+        color: $textOrange;
+        text-shadow: $textShadow;
+        transition: all 0.1s ease-in-out;
+        font-style: inherit;
+
+    }
+    
+    &__read-more:hover {
+       color: #6da7ff;
+       font-style: italic;
+    }
 }
 
 .post:last-child {

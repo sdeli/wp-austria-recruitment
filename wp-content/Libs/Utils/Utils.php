@@ -37,11 +37,16 @@ class Utils
         }
     }
 
-    private function echoFakePageCategory()
+    public function echoFakePageCategory()
     {
         echo '
         <a href="/" class="au_category au_category--orange" title="page">
             <span>Oldal</span>
         </a>';
+    }
+
+    public function excerptReadMore($more)
+    {
+        return '';
     }
 }

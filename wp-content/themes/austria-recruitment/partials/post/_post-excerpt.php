@@ -32,8 +32,9 @@
 
 
             <div class="fr-view post__container__body__teaser">
-                <?php the_excerpt(); ?>
-                Author: <?php the_author(); ?>
+                <?php echo get_the_excerpt().'...<br>'; ?>
+                <a href="<?php the_permalink(); ?>"
+                    class="post__read-more">olvass tovább...</a>
             </div>
             </a>
         </div> <!-- post__container__body clearfix -->
