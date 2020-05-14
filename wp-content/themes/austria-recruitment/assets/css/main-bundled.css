@@ -1440,6 +1440,7 @@ body {
                     vertical-align: bottom;
                     border-radius: 0.2rem;
                     width: 100%;
+                    height: auto;
                 }
 .post__container__body__teaser {
                 display: block;

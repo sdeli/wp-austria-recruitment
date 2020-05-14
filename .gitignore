@@ -8,3 +8,6 @@
 !/wp-content/uploads/word
 wp-content/uploads/2020
 wp-content/uploads/wordpress-popular-posts
+
+wp-content/themes/*
+!wp-content/themes/austria-recruitment
