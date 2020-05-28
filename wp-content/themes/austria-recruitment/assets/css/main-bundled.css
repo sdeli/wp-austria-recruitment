@@ -1171,7 +1171,10 @@ body {
         display: none;
     }
 }
-/*width: 100%;*/
+.article {
+    color: #323232;
+
+}
 .article__content {
         background-color: #ffffff;
     }
@@ -1328,6 +1331,9 @@ body {
             margin-bottom: 0.9375rem;
         }
 }
+.post {
+    color: #323232;
+}
 .post__text--emphasize {
         color: #de4646;
         font-weight: 600;
@@ -1444,7 +1450,6 @@ body {
                 }
 .post__container__body__teaser {
                 display: block;
-                color: black;
                 line-height: 1.4rem;
                 text-align: justify;
             }

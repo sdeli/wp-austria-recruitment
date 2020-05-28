@@ -38,7 +38,9 @@
                 <?php else : ?>
                 <div class="fr-view post__container__body__teaser post__container__body__teaser--full-width">
                     <?php endif; ?>
-                    <?php echo get_the_excerpt().'...<br>'; ?>
+                    <p style="margin-bottom: 0px;">
+                        <?php echo get_the_excerpt().'...<br>'; ?>
+                    </p>
                     <a href="<?php the_permalink(); ?>"
                         class="post__read-more">olvass tovább...</a>
                 </div>

@@ -1,4 +1,6 @@
 .post {
+    color: #323232;
+
     &__text--emphasize {
         color: #de4646;
         font-weight: 600;
@@ -134,7 +136,6 @@
             
             &__teaser {
                 display: block;
-                color: black;
                 line-height: 1.4rem;
                 text-align: justify;
 

@@ -1,5 +1,5 @@
 .article {
-    /*width: 100%;*/
+    color: #323232;
     &__content {
         background-color: $mainWhite;
 
