@@ -1,5 +1,17 @@
 .article {
     color: #323232;
+
+    & h2 {
+        font-size: 1.2rem;
+        @mixin fontPoppins;
+        text-shadow: 0 1px 1px rgba(0,0,0,0.33);
+        margin-bottom: 0.5rem;
+    }
+
+    & strong {
+        text-shadow: 0 1px 1px rgba(0,0,0,0.33);
+    }
+
     &__content {
         background-color: $mainWhite;
 
