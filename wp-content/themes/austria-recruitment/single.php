@@ -73,7 +73,6 @@
         </div> <!-- info-feed end -->
 
         <?php get_sidebar(); ?>
-        <?php get_sidebar(); ?>
     </div> <!-- row -->
 </section> <!-- main-info-area end -->
 
