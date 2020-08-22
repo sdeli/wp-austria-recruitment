@@ -24,7 +24,7 @@ services:
       MYSQL_PASSWORD: examplepass
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
-      - db:/var/lib/mysql
+      - db:/home/sandor/mysql
 
 volumes:
   wordpress:
